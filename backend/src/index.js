@@ -37,21 +37,6 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-function logRoutes(app) {
-  if (!app._router) {
-    console.log("No routes found on app.");
-    return;
-  }
-
-  app._router.stack.forEach((middleware) => {
-    if (middleware.route) {
-      const methods = Object.keys(middleware.route.methods)
-        .map((m) => m.toUpperCase())
-        .join(", ");
-      console.log(`${methods} ${middleware.route.path}`);
-    }
-  });
-}
 
 
 
